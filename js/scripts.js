@@ -21,3 +21,14 @@ var anagram = function(word, list) {
   });
   return matchingArray;
 };
+
+$(function() {
+  $("form").submit(function(event) {
+    var wordInput = $("input#word").val();
+    var listInput = $("input#list").val();
+    var anagramList = anagram(wordInput, listInput);
+    $("#list-results").text(anagramList);
+
+    event.preventDefault();
+  });
+});
